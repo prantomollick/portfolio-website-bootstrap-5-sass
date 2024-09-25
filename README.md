@@ -126,6 +126,7 @@ Open http://localhost:5173 in your browser to view the project.
 
 -   [HTML5](https://www.w3.org/TR/2012/WD-html-markup-20121025/elements.html)
 -   [Bootstrap 5](https://getbootstrap.com/)
+-   [Bootstrap Icon](https://icons.getbootstrap.com/)
 -   [SASS](https://sass-lang.com/)
 -   [GLightbox](https://biati-digital.github.io/glightbox/)
 -   [Vite](https://vitejs.dev/guide/)

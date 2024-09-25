@@ -1,0 +1,12 @@
+.rounded-pill {
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+.display-2--description {
+    @include media-breakpoint-up(lg) {
+        font-size: 1.5rem;
+        display: inline-block;
+    }
+}

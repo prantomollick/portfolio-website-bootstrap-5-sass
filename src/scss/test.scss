@@ -1,0 +1,79 @@
+// MY Theme Colors
+$purple: #6f42c1;
+$pink: #d63384;
+
+// White and Gray colors
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// $primary: $blue !default;
+// $secondary: $gray-600 !default;
+
+@function generate-shades($color, $steps: 9) {
+    $shades: ();
+    @for $i from 1 through $steps {
+        $shade: if(
+            $i <= $steps / 2,
+            lighten($color, ($steps - $i) * 10%),
+            darken($color, ($i - $steps / 2) * 10%)
+        );
+        $shades: map-merge($shades, ($i * 100: $shade));
+    }
+    @return $shades;
+}
+
+$purple-shades: generate-shades($purple);
+$pink-shades: generate-shades($pink);
+
+// Ensure $utilities is defined before merging
+$utilities: (
+    "color": (
+        "values": (
+            "primary": #007bff,
+            "secondary": #6c757d
+        )
+    )
+);
+
+// Merge the utilities map with the new colors
+$utilities: map-merge(
+    $utilities,
+    (
+        "color":
+            map-merge(
+                map-get($utilities, "color"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "color"), "values"),
+                            $purple-shades,
+                            $pink-shades
+                        )
+                )
+            )
+    )
+);
+
+// Define utility classes for color shades
+@each $name, $color in $purple-shades {
+    .text-purple-#{$name} {
+        color: $color !important;
+    }
+}
+
+@each $name, $color in $pink-shades {
+    .text-pink-#{$name} {
+        color: $color !important;
+    }
+}
+
+// @each $name, $color in ;

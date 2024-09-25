@@ -10,3 +10,30 @@
         display: inline-block;
     }
 }
+
+// BORDER RIGHT
+.border-right {
+    @include media-breakpoint-up(sm) {
+        border-right: 0.1rem solid $gray-300;
+        height: 100%;
+    }
+}
+
+// SERVICE Section
+.services__content {
+    p {
+        @include media-breakpoint-up(lg) {
+            font-size: 1rem;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 5rem;
+    }
+
+    .icon {
+        @include media-breakpoint-up(lg) {
+            font-size: 2.5rem;
+        }
+    }
+}

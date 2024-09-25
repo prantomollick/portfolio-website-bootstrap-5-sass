@@ -27,7 +27,12 @@ Make sure you have the following installed on your machine:
 
 ```bash
 $ git clone https://github.com/prantomollick/portfolio-website-bootstrap-5-sass.git
-$ cd sushiman-responsive-web-theme-html-css
+```
+
+**Navigate to the project directory**
+
+```bash
+$ cd portfolio-website-bootstrap-5-sass
 ```
 
 **Installation**
